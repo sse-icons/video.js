@@ -1,0 +1,63 @@
+{
+  "name": "@sse-auth/template",
+  "version": "1.0.0",
+  "description": "A collection of well-optimized SVG tech logos for developers and designers—customizable, scalable, and free.",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "svg",
+    "oauth",
+    "icons",
+    "logos",
+    "react",
+    "vite",
+    "sse-auth",
+    "credentials"
+  ],
+  "scripts": {
+    "dev:playground": "vite --host",
+    "dev:showcase": "cd showcase && npm run dev",
+    "clean": "rimraf --glob dist && rimraf --glob lib/icons/*.tsx",
+    "build": "npm run clean && tsx ./lib/scripts/build.ts && tsc --p ./tsconfig-build.json && vite build",
+    "build:showcase": "cd showcase && npm run build",
+    "build:json": "tsx ./lib/scripts/buildJson.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "preview:showcase": "cd showcase && npm run preview",
+    "prePublishOnly": "npm run build",
+    "data:sort": "tsx ./lib/scripts/sortData.ts",
+    "data:count": "tsx ./lib/scripts/countIcons.ts",
+    "optimize-svgs": "svgo -f ./icons/raw -o ./icons && rimraf --glob icons/raw/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sse-icons/template.git"
+  },
+  "author": "SSE World",
+  "bugs": {
+    "url": "https://github.com/sse-icons/template/issues"
+  },
+  "homepage": "https://github.com/sse-icons/template#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.7",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rimraf": "^6.0.1",
+    "svgo": "^4.0.0",
+    "svgson": "^5.3.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-lib-inject-css": "^2.2.2"
+  }
+}
