@@ -50,7 +50,7 @@
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react-dom": "^19.1.1",
     "rimraf": "^6.0.1",
     "svgo": "^4.0.0",
     "svgson": "^5.3.1",
